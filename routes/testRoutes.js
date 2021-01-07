@@ -6,9 +6,9 @@ import { protect } from '../middleware/authMiddleware.js'
 
 
 
-router.route('/card').get(protect, (req, res) => {
+router.route('/card').post(protect, (req, res) => {
     https
-  .get("https://lookup.binlist.net/45717360", res => {
+  .get(`https://lookup.binlist.net/${req.body.bin}`, res => {
     let data = "";
 
     // A chunk of data has been recieved.
