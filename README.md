@@ -14,7 +14,7 @@ POST :
 PAYLOAD: "email": "admin@example.com",
 "password": "123456"
 
-API-TEST
+API-TEST GET
 http://localhost:5000/api/tests/card
 
 ## Prerequisites
