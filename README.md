@@ -14,8 +14,10 @@ POST :
 PAYLOAD: "email": "admin@example.com",
 "password": "123456"
 
-API-TEST GET
+API-TEST POST
 http://localhost:5000/api/tests/card
+payload:
+"bin" : "45717360"
 
 ## Prerequisites
 
