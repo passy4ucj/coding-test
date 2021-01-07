@@ -6,7 +6,7 @@ import { protect } from '../middleware/authMiddleware.js'
 
 
 
-router.route('/card').post(protect, (req, res) => {
+router.route('/card').post(protect, (req, response) => {
     https
   .get(`https://lookup.binlist.net/${req.body.bin}`, res => {
     let data = "";
@@ -17,12 +17,13 @@ router.route('/card').post(protect, (req, res) => {
     });
 
     // The whole response has been received. Print out the result.
-    res.on("end", () => {
+    res.on("end", (res) => {
       let url = JSON.parse(data);
       console.log(url)
      // return url
+     response.json(url)
     });
-    //res.json(url)
+    
     
   })
   .on("error", err => {
